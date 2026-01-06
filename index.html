@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All-in-One Media Downloader - Fast & Free</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-light">
+    <!-- Navigation --> 
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3 transition-all" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+                <i class="fas fa-cloud-download-alt me-2 text-primary"></i>
+                <span class="text-dark">Media</span><span class="text-primary">Saver</span>
+            </a>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-dark fw-medium" href="#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-medium" href="#downloader">Downloader</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-medium" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-medium" href="#how-it-works">How it Works</a>
+                    </li>
+                </ul>
+                <a href="#downloader" class="btn btn-primary ms-lg-3 rounded-pill px-4 shadow-sm">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero"
+        class="d-flex align-items-center justify-content-center text-center position-relative overflow-hidden"
+        style="min-height: 90vh;">
+        <div class="hero-bg-overlay"></div>
+        <div class="container position-relative z-1 pt-5">
+            <h1 class="display-3 fw-bold mb-3 text-dark">All-in-One <span class="text-primary-gradient">Media
+                    Downloader</span></h1>
+            <p class="lead mb-5 text-muted mx-auto" style="max-width: 600px;">Download videos, audio, and images from
+                your favorite social platforms in seconds. Secure, fast, and free.</p>
+
+            <!-- Quick Input (Hero) Removed as per request -->
+            <div class="mb-5">
+                <a href="#downloader" class="btn btn-primary btn-lg rounded-pill px-5 shadow-lg hover-scale"><i
+                        class="fas fa-arrow-down me-2"></i>Start Downloading</a>
+            </div>
+
+            <!-- Platform Icons -->
+            <div class="mt-4 d-flex justify-content-center gap-4 flex-wrap text-muted opacity-75">
+                <div class="platform-icon" title="TikTok"><i class="fab fa-tiktok fa-2x"></i></div>
+                <div class="platform-icon" title="YouTube"><i class="fab fa-youtube fa-2x"></i></div>
+                <div class="platform-icon" title="Instagram"><i class="fab fa-instagram fa-2x"></i></div>
+                <div class="platform-icon" title="Facebook"><i class="fab fa-facebook fa-2x"></i></div>
+                <div class="platform-icon" title="Twitter/X"><i class="fab fa-twitter fa-2x"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Downloader Section -->
+    <section id="downloader" class="py-5 position-relative">
+        <div class="container">
+            <div class="card border-0 shadow-xl rounded-5 overflow-hidden glass-card" id="downloader-card">
+                <div class="card-body p-4 p-md-5 text-center">
+                    <h2 class="mb-4 fw-bold">Ready to Download?</h2>
+
+                    <div class="d-flex justify-content-center mb-4 min-h-30" id="platform-detector">
+                        <!-- Auto-detect badge will appear here -->
+                        <span class="badge bg-light text-dark rounded-pill px-3 py-2 border shadow-sm"><i
+                                class="fas fa-magic me-2 text-primary"></i>Auto-detect supported</span>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="form-floating mb-3">
+                                <input type="text" id="url-input" class="form-control rounded-4"
+                                    placeholder="Paste video URL here">
+                                <label for="url-input">Paste video URL here...</label>
+                            </div>
+
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <select class="form-select rounded-4" id="media-type" aria-label="Format">
+                                            <option selected value="video">Video (MP4)</option>
+                                            <option value="audio">Audio (MP3)</option>
+                                            <option value="image">Image (JPG)</option>
+                                        </select>
+                                        <label for="media-type">Format</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <select class="form-select rounded-4" id="quality" aria-label="Quality">
+                                            <option value="8k">8K (Ultra HD)</option>
+                                            <option value="4k">4K (Ultra HD)</option>
+                                            <option value="2k">2K (Quad HD)</option>
+                                            <option selected value="1080p">1080p (Full HD)</option>
+                                            <option value="720p">720p (HD)</option>
+                                            <option value="480p">480p (SD)</option>
+                                        </select>
+                                        <label for="quality">Quality</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button id="download-btn"
+                                class="btn btn-lg btn-success w-100 rounded-4 py-3 fw-bold shadow-md transition-all">
+                                <i class="fas fa-download me-2"></i> Start Download
+                            </button>
+
+                            <!-- Fake Progress UI -->
+                            <div id="progress-area" class="mt-4 d-none">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <small class="fw-bold text-dark" id="status-text">Connecting...</small>
+                                    <small class="fw-bold text-dark" id="percentage">0%</small>
+                                </div>
+                                <div class="progress rounded-pill bg-light shadow-inner" style="height: 12px;">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-success gradient-success"
+                                        role="progressbar" style="width: 0%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Success Message -->
+                            <div id="success-msg" class="mt-4 d-none alert alert-success rounded-4 border-0 shadow-sm">
+                                <i class="fas fa-check-circle me-2"></i> Content ready! Your download should verify
+                                shortly.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Why Choose MediaSaver?</h2>
+                <div class="divider mx-auto bg-primary rounded" style="width: 60px; height: 4px;"></div>
+                <p class="text-muted mt-3">The ultimate tool for saving your favorite content.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm p-4 text-center rounded-4 feature-card hover-lift">
+                        <div class="icon-box mb-4 mx-auto bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center"
+                            style="width: 80px; height: 80px;"><i class="fas fa-bolt fa-2x"></i></div>
+                        <h4 class="fw-bold">Super Fast</h4>
+                        <p class="text-muted">Download your media in seconds with our optimized non-existent servers.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm p-4 text-center rounded-4 feature-card hover-lift">
+                        <div class="icon-box mb-4 mx-auto bg-success-subtle text-success rounded-circle d-flex align-items-center justify-content-center"
+                            style="width: 80px; height: 80px;"><i class="fas fa-shield-alt fa-2x"></i></div>
+                        <h4 class="fw-bold">Safe & Secure</h4>
+                        <p class="text-muted">No login required. We don't store your personal data or tracking info.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm p-4 text-center rounded-4 feature-card hover-lift">
+                        <div class="icon-box mb-4 mx-auto bg-info-subtle text-info rounded-circle d-flex align-items-center justify-content-center"
+                            style="width: 80px; height: 80px;"><i class="fas fa-mobile-alt fa-2x"></i></div>
+                        <h4 class="fw-bold">Mobile Friendly</h4>
+                        <p class="text-muted">Fully responsive design that works perfectly on iPhone, Android, Tablet,
+                            and Desktop.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-5 bg-light rounded-top-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">How to Download</h2>
+                <p class="text-muted">Simple 3-step process</p>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4 mb-4">
+                    <div class="step-card p-4">
+                        <div class="step-num bg-primary text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center shadow-lg"
+                            style="width: 60px; height: 60px; font-size: 24px; font-weight: bold;">1</div>
+                        <h5 class="fw-bold">Copy Link</h5>
+                        <p class="small text-muted">Find the video or image you want on social media and copy its URL.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="step-card p-4">
+                        <div class="step-num bg-primary text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center shadow-lg"
+                            style="width: 60px; height: 60px; font-size: 24px; font-weight: bold;">2</div>
+                        <h5 class="fw-bold">Paste & Choose</h5>
+                        <p class="small text-muted">Paste the link into the box above and select your preferred format.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="step-card p-4">
+                        <div class="step-num bg-primary text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center shadow-lg"
+                            style="width: 60px; height: 60px; font-size: 24px; font-weight: bold;">3</div>
+                        <h5 class="fw-bold">Download</h5>
+                        <p class="small text-muted">Click the download button and wait for the file to be processed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="py-4 bg-dark text-white-50">
+        <div class="container text-center">
+            <div class="p-4 border border-secondary rounded-4 bg-black bg-opacity-25">
+                <p class="small mb-0"><strong><i class="fas fa-exclamation-triangle me-2 text-warning"></i>Legal
+                        Disclaimer:</strong> This tool is intended for personal use only. Users are strictly responsible
+                    for ensuring they have the right to download and use the content. We do not host any copyrighted
+                    material and do not support piracy. Please respect the intellectual property rights of content
+                    creators and the Terms of Service of the respective platforms (YouTube, TikTok, Instagram, etc.).
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-5">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <a class="navbar-brand fw-bold mb-3 d-block" href="#">
+                        <i class="fas fa-cloud-download-alt me-2 text-primary"></i>MediaSaver
+                    </a>
+                    <p class="text-white-50 small mb-0">&copy; 2025 MediaSaver. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="d-flex justify-content-center justify-content-md-end gap-3 mb-3">
+                        <a href="#" class="text-white-50 hover-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white-50 hover-white"><i class="fab fa-github"></i></a>
+                        <a href="#" class="text-white-50 hover-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div>
+                        <a href="#" class="text-white-50 text-decoration-none me-3 small hover-white">Privacy Policy</a>
+                        <a href="#" class="text-white-50 text-decoration-none small hover-white">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
