@@ -13,7 +13,7 @@ app.use(express.json());
 ========================= */
 app.get("/", (req, res) => {
   res.send("MediaSaver Backend running on port 5000");
-});
+}); 
 
 /* =========================
    INFO ROUTE
